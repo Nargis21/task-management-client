@@ -13,8 +13,15 @@ const CompleteTask = () => {
     }
 
     return (
-        <div className='p-6'>
-            <h1 className='text-4xl font-bold text-center py-12 text-zinc-700 font-mono'>Completed Tasks</h1>
+        <div className='p-6 pb-20 bg-slate-200'>
+            <div className='py-12 text-center'>
+                <div class="indicator">
+                    <span class="indicator-item badge badge-accent font-bold">{completeTasks.length}</span>
+                    <h1 className='text-4xl font-bold  text-zinc-700'>Completed Tasks</h1>
+                </div>
+            </div>
+
+
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
                 {
                     completeTasks.map(task => <Tasks key={task._id} task={task} ></Tasks>)

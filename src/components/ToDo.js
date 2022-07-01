@@ -15,8 +15,13 @@ const ToDo = () => {
     }
 
     return (
-        <div className='p-6'>
-            <h1 className='text-4xl font-bold text-center py-12 text-zinc-700 font-mono'>Your Tasks</h1>
+        <div className='p-6 pb-20 bg-slate-200'>
+            <div className='py-12 text-center'>
+                <div class="indicator">
+                    <span class="indicator-item badge badge-accent font-bold">{tasks.length}</span>
+                    <h1 className='text-4xl font-bold  text-zinc-700'>Your Tasks</h1>
+                </div>
+            </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
                 {
                     tasks.map(task => <Task key={task._id} task={task} refetch={refetch} setUpdateTask={setUpdateTask}></Task>)

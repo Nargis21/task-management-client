@@ -5,10 +5,9 @@ import 'react-day-picker/dist/style.css';
 
 const Calender = ({ date, setDate }) => {
     return (
-        <div className='flex justify-center'>
+        <div className='py-12 bg-slate-200 flex justify-center'>
             <div>
-                <h1 className='text-4xl font-bold text-center my-12 text-zinc-700 font-mono'>Set Your DeadLine</h1>
-                <div className='w-96 p-8 rounded-lg shadow-2xl'>
+                <div className='w-96 p-8 rounded-lg bg-white shadow-2xl'>
                     <DayPicker
                         mode="single"
                         selected={date}

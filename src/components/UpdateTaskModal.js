@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify'
 
 const UpdateTaskModal = ({ updateTask, setUpdateTask, refetch }) => {
     const handleUpdateTask = event => {
@@ -16,9 +17,11 @@ const UpdateTaskModal = ({ updateTask, setUpdateTask, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setUpdateTask(null)
-                refetch()
+                if (data.acknowledged) {
+                    toast.success('Task Updated!')
+                    setUpdateTask(null)
+                    refetch()
+                }
             })
 
 

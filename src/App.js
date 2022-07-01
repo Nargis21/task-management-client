@@ -5,6 +5,10 @@ import Home from './components/Home';
 import CompleteTask from './components/CompleteTask';
 import ToDo from './components/ToDo';
 import Calender from './components/Calender';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -17,6 +21,8 @@ function App() {
         <Route path='/todo' element={<ToDo></ToDo>}></Route>
         <Route path='/calender' element={<Calender></Calender>}></Route>
       </Routes>
+      <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

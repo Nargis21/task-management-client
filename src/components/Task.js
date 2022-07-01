@@ -1,4 +1,6 @@
 import React from 'react';
+import { toast } from 'react-toastify'
+
 
 const Task = ({ task, refetch, setUpdateTask }) => {
     const completeTask = () => {
@@ -10,6 +12,7 @@ const Task = ({ task, refetch, setUpdateTask }) => {
                 console.log(data)
                 refetch()
             })
+
         fetch('https://sleepy-waters-32618.herokuapp.com/completeTask', {
             method: 'POST',
             headers: {
@@ -19,16 +22,20 @@ const Task = ({ task, refetch, setUpdateTask }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Task Completed!')
+                    refetch()
+                }
             })
+
     }
     return (
 
         <div>
-            <div class="card overflow-x-auto bg-base-100 shadow-xl">
+            <div class="card break-all bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <div className='flex items-center gap-2'>
-                        <button className='mt-2' onClick={completeTask}>
+                    <div className='flex gap-2'>
+                        <button className='' onClick={completeTask}>
                             <input type="checkbox" class="checkbox checkbox-md checkbox-accent" />
                         </button>
                         <h2 class="card-title">{task.task}</h2>
