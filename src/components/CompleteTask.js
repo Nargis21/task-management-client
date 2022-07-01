@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import Tasks from './Tasks';
 
 const CompleteTask = () => {
-    const { data: completeTasks, isLoading } = useQuery('completeTasks', () => fetch('http://localhost:5000/completeTask', {
+    const { data: completeTasks, isLoading } = useQuery('completeTasks', () => fetch('https://sleepy-waters-32618.herokuapp.com/completeTask', {
         method: 'GET',
     }).then(res => res.json()))
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Task = ({ task, refetch, setUpdateTask }) => {
     const completeTask = () => {
-        fetch(`http://localhost:5000/task/${task._id}`, {
+        fetch(`https://sleepy-waters-32618.herokuapp.com/task/${task._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -10,7 +10,7 @@ const Task = ({ task, refetch, setUpdateTask }) => {
                 console.log(data)
                 refetch()
             })
-        fetch('http://localhost:5000/completeTask', {
+        fetch('https://sleepy-waters-32618.herokuapp.com/completeTask', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

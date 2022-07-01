@@ -7,7 +7,7 @@ const UpdateTaskModal = ({ updateTask, setUpdateTask, refetch }) => {
             task: event.target.task.value
         }
 
-        fetch(`http://localhost:5000/task/${updateTask._id}`, {
+        fetch(`https://sleepy-waters-32618.herokuapp.com/task/${updateTask._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

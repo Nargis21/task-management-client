@@ -6,7 +6,7 @@ import UpdateTaskModal from './UpdateTaskModal';
 
 const ToDo = () => {
     const [updateTask, setUpdateTask] = useState(null)
-    const { data: tasks, isLoading, refetch } = useQuery('tasks', () => fetch('http://localhost:5000/task', {
+    const { data: tasks, isLoading, refetch } = useQuery('tasks', () => fetch('https://sleepy-waters-32618.herokuapp.com/task', {
         method: 'GET',
     }).then(res => res.json()))
 
